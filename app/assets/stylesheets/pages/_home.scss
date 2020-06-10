@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 
-.container-separated {
+.container-separated-home {
   height: 100vh;
   background: linear-gradient(
       to right,
@@ -15,12 +15,20 @@
 }
 
 .centered-text {
-  margin-top: 15px;
+  display: flex;
+  text-align: center;
   h1 {
     color: $gray;
   }
   li {
     list-style: none;
-    padding-top: 10px;
+    padding-top: 25px;
   }
+}
+
+.button-gray {
+  width: 200px;
+  font-size: 26px;
+  background-color: $light-gray;
+  border-radius: 20px;
 }

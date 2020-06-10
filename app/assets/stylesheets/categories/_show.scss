@@ -1,0 +1,40 @@
+.container-separated-show {
+  height: 100vh;
+  background: linear-gradient(
+      to right,
+      white,
+      white 50%,
+      $dark-gray 50%,
+      $dark-gray 100%
+    );
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  p {
+    font-size: 30px;
+    opacity: 0.75;
+  }
+}
+
+.left-container {
+  width: 45vh;
+}
+
+.right-container {
+  width: 45vh;
+}
+
+.center-container {
+  width: 10vh;
+  text-align: center;
+}
+
+#first-choice:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#second-choice:hover {
+  cursor: pointer;
+  opacity: 1;
+}
