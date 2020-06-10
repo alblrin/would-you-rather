@@ -8,6 +8,10 @@
 
 puts "Clearing database..."
 
+User.all.each do |user|
+  user.destroy
+end
+
 Answer.all.each do |answer|
   answer.destroy
 end
@@ -50,9 +54,9 @@ Choice.create!({first_choice: "Pouvoir changer le passé", second_choice: "Pouvo
 
 puts "Creating answers..."
 Choice.all.each do |choice|
-  Answer.create!({choice: choice, choice_made: [1, 2].sample, user: axel})
-  Answer.create!({choice: choice, choice_made: [1, 2].sample, user: michael})
-  Answer.create!({choice: choice, choice_made: [1, 2].sample, user: robin})
+  Answer.create!({choice: choice, choice_made: [0, 1].sample, user: axel})
+  Answer.create!({choice: choice, choice_made: [0, 1].sample, user: michael})
+  Answer.create!({choice: choice, choice_made: [0, 1].sample, user: robin})
 end
 
 puts "Finished!"

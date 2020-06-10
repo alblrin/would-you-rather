@@ -1,11 +1,24 @@
 <div class="container-separated-show">
-  <div class="left-container">
-    <p id="first-choice"><%= @choice.first_choice %></p>
+  <div class="top-container">
+    <div class="top-left-container">
+      <% if current_user %>
+        <%= link_to @choice.first_choice, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 0), method: :post, id: "first-choice" %>
+      <% else %>
+        <%= link_to @choice.first_choice, new_user_session_path, id: "first-choice"%>
+      <% end %>
+    </div>
+    <div class="top-center-container">
+      <span>OU</span>
+    </div>
+    <div class="top-right-container">
+      <% if current_user %>
+        <%= link_to @choice.second_choice, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 1), method: :post, id: "second-choice" %>
+      <% else %>
+        <%= link_to @choice.second_choice, new_user_session_path, id: "second-choice"%>
+      <% end %>
+    </div>
   </div>
-  <div class="center-container">
-    <p>OU</p>
-  </div>
-  <div class="right-container">
-    <p id="second-choice"><%= @choice.second_choice %></p>
+  <div class="bottom-container">
+    <canvas id="answerChart" data-answers="<%= @first_choice_proportion %>" width="800" height="400"></canvas>
   </div>
 </div>
