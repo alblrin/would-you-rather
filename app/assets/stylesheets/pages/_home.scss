@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+
+.container-separated {
+  height: 100vh;
+  background: linear-gradient(
+      to right,
+      white,
+      white 50%,
+      $dark-gray 50%,
+      $dark-gray 100%
+    );
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.centered-text {
+  margin-top: 15px;
+  h1 {
+    color: $gray;
+  }
+  li {
+    list-style: none;
+    padding-top: 10px;
+  }
+}

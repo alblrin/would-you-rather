@@ -1,7 +1,9 @@
-<h1>Bienvenue</h1>
-<h3>Choisis ta catégorie :</h3>
-<ul>
-  <% @categories.each do |category| %>
-    <li><%= category.name.capitalize %></li>
-  <% end %>
-</ul>
+<div class="container-separated">
+  <div class="centered-text">
+    <ul>
+      <% @categories.each do |category| %>
+        <li><button type="button" class="btn btn-secondary"><%= category.name.capitalize %></button></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
