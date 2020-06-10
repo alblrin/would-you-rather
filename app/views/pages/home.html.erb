@@ -1,8 +1,8 @@
-<div class="container-separated">
+<div class="container-separated-home">
   <div class="centered-text">
     <ul>
       <% @categories.each do |category| %>
-        <li><button type="button" class="btn btn-secondary"><%= category.name.capitalize %></button></li>
+        <li><a role="button" class="btn button-gray" href="/categories/<%= category.id %>"><%= category.name.capitalize %></a></li>
       <% end %>
     </ul>
   </div>
