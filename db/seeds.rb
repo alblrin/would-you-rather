@@ -8,15 +8,25 @@
 
 puts "Clearing database..."
 
-Category.all.each do |category|
-  category.destroy
+Answer.all.each do |answer|
+  answer.destroy
 end
 
 Choice.all.each do |choice|
   choice.destroy
 end
 
-puts "Create categories..."
+Category.all.each do |category|
+  category.destroy
+end
+
+puts "Creating users..."
+
+axel = User.create!(email: "axel@gmail.com", password: "Axel!!")
+michael = User.create!(email: "michael@gmail.com", password: "Michael!!")
+robin = User.create!(email: "robin@gmail.com", password: "Robin!!")
+
+puts "Creating categories..."
 
 debutant = Category.create!({name: "Débutant"})
 
@@ -24,7 +34,7 @@ avance = Category.create!({name: "Avancé"})
 
 philosophique = Category.create!({name: "Philosophique"})
 
-puts "Create choices..."
+puts "Creating choices..."
 
 Choice.create!({first_choice: "Lécher la barre dans le métro", second_choice: "Mâcher un chewing-gum trouvé par terre", category: debutant})
 
@@ -37,5 +47,12 @@ Choice.create!({first_choice: "Qu’il ne fasse jamais nuit", second_choice: "Qu
 Choice.create!({first_choice: "Être ré-incarné en moustique", second_choice: "Ne pas être ré-incarné", category: philosophique})
 
 Choice.create!({first_choice: "Pouvoir changer le passé", second_choice: "Pouvoir changer le futur", category: philosophique})
+
+puts "Creating answers..."
+Choice.all.each do |choice|
+  Answer.create!({choice: choice, choice_made: [1, 2].sample, user: axel})
+  Answer.create!({choice: choice, choice_made: [1, 2].sample, user: michael})
+  Answer.create!({choice: choice, choice_made: [1, 2].sample, user: robin})
+end
 
 puts "Finished!"
