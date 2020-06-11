@@ -12,10 +12,13 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Créer un tu préfères", "#", class: "nav-link" %>
+          <%= link_to "Créer un tu préfères", new_choice_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Voir la liste", choices_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <p class="dropdown-toggle btn btn-secondary", id="navbarDropdown", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false">Logged</p>
+          <p class="dropdown-toggle btn btn-secondary ml-2", id="navbarDropdown", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false">Logged</p>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
