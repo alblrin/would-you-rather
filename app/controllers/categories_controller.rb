@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
     @answers = Answer.where("choice_id = ?", @choice.id)
     @first_choice_answers = @answers.where("choice_made = 0")
     @first_choice_proportion = @first_choice_answers.count.to_f / @answers.count
+    @current_user_answer = @answers.where('user_id = ?', current_user.id).first if current_user
   end
 
   private

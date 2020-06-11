@@ -2,7 +2,11 @@
   <div class="top-container">
     <div class="top-left-container">
       <% if current_user %>
-        <%= link_to @choice.first_choice, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 0), method: :post, id: "first-choice" %>
+        <% if @current_user_answer %>
+          <%= link_to @choice.first_choice, choice_answer_path(category_id: @category.id, answer_id: @current_user_answer.id, choice_id: @choice.id, choice_made: 0), method: :put, id: "first-choice", class: "valid-choice" %>
+        <% else %>
+          <%= link_to @choice.first_choice, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 0), method: :post, id: "first-choice", class: "valid-choice" %>
+        <% end %>
       <% else %>
         <%= link_to @choice.first_choice, new_user_session_path, id: "first-choice"%>
       <% end %>
@@ -12,13 +16,19 @@
     </div>
     <div class="top-right-container">
       <% if current_user %>
-        <%= link_to @choice.second_choice, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 1), method: :post, id: "second-choice" %>
+        <% if @current_user_answer %>
+          <%= link_to @choice.second_choice, choice_answer_path(category_id: @category.id, answer_id: @current_user_answer.id, choice_id: @choice.id, choice_made: 1), method: :put, id: "second-choice", class: "valid-choice" %>
+        <% else %>
+          <%= link_to @choice.second_choice, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 1), method: :post, id: "second-choice", class: "valid-choice" %>
+        <% end %>
       <% else %>
         <%= link_to @choice.second_choice, new_user_session_path, id: "second-choice"%>
       <% end %>
     </div>
   </div>
-  <div class="bottom-container">
-    <canvas id="answerChart" data-answers="<%= @first_choice_proportion %>" width="800" height="400"></canvas>
+  <div class="bottom-container d-none mt-3" id="stats-zone">
+    <p>Moyenne des réponses :</p>
+    <canvas id="answerChart" data-answers="<%= @first_choice_proportion %>" width="800" height="300"></canvas>
+    <%= link_to "Suivant", "", class: "btn btn-secondary" %>
   </div>
 </div>
