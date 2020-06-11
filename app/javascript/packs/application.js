@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import { answerChart } from '../components/answer_chart';
 import { showStats } from '../components/show_stats';
+import { categoryFilter } from '../components/category_filter';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   answerChart();
   showStats();
+  categoryFilter();
 });

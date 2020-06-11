@@ -1,5 +1,6 @@
 class ChoicesController < ApplicationController
   def index
+    @categories = Category.all
     @choices = Choice.all
   end
 
@@ -13,6 +14,7 @@ class ChoicesController < ApplicationController
     @category_id = params["choice"]["category"].to_i
     @category = Category.where("id = ?", @category_id).first
     @choice.category = @category
+    @choice.created_by = current_user.username
     @choice.save
 
     redirect_to choices_path

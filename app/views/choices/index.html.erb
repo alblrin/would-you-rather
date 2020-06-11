@@ -1,11 +1,18 @@
 <div class="container mt-3">
+  <div class="filter-list mb-3">
+  <button type="button" class="btn btn-light all-filter">Tout</button>
+  <% @categories.each do |category| %>
+    <button type="button" class="btn btn-light category-filter" data-category="<%= category.name %>"><%= category.name.capitalize %></button>
+  <% end %>
+  </div>
   <% @choices.each do |choice| %>
-      <div class="card-product">
+      <div class="card-product choice-card <%= choice.category.name %>-filter">
         <img src="https://picsum.photos/80?random=<%= choice.id %>" />
         <div class="card-product-infos">
           <p><%= choice.first_choice %></p>
           <p><%= choice.second_choice %></p>
         </div>
+        <p class="mr-3">Inventé par <em><%= choice.created_by %></em></p>
         <%= link_to choice_path(choice), method: :delete, data: { confirm: "Are you sure?" } do %>
           <svg class="bi bi-trash" width="1.3em" height="1.3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
