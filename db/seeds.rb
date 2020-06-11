@@ -24,19 +24,27 @@ robin = User.create!(username: "robin1", password: "Robin!!")
 
 puts "Creating categories..."
 
-debutant = Category.create!({name: "Débutant"})
+gentil = Category.create!({name: "Gentil"})
 
-avance = Category.create!({name: "Avancé"})
+absurde = Category.create!({name: "Absurde"})
+
+trash = Category.create!({name: "Trash"})
 
 philosophique = Category.create!({name: "Philosophique"})
 
 puts "Creating choices..."
 
-Choice.create!({first_choice: "Lécher la barre dans le métro", second_choice: "Mâcher un chewing-gum trouvé par terre", category: debutant})
+Choice.create!({first_choice: "Lécher la barre dans le métro", second_choice: "Mâcher un chewing-gum trouvé par terre", category: gentil})
 
-Choice.create!({first_choice: "Porter les sous-vêtements de quelqu’un d’autre", second_choice: "Utiliser la brosse à dent de quelqu’un d’autre", category: debutant})
+Choice.create!({first_choice: "Porter les sous-vêtements de quelqu’un d’autre", second_choice: "Utiliser la brosse à dent de quelqu’un d’autre", category: gentil})
 
-Choice.create!({first_choice: "Que tes parents te surprennent en train de faire l’amour", second_choice: "Surprendre tes parents faire l’amour", category: avance})
+Choice.create!({first_choice: "Que trois pingouins te suivent toute ta vie", second_choice: "Que ça fasse un bruit de klaxon à chaque pas que tu fais", category: absurde})
+
+Choice.create!({first_choice: "Avoir un bras de 2 mètres", second_choice: "Ne plus jamais pouvoir t'assoir", category: absurde})
+
+Choice.create!({first_choice: "Être né avec un bras en moins", second_choice: "Devoir te couper toi même un doigt", category: trash})
+
+Choice.create!({first_choice: "Que tes parents te surprennent en train de faire l’amour", second_choice: "Surprendre tes parents faire l’amour", category: trash})
 
 Choice.create!({first_choice: "Qu’il ne fasse jamais nuit", second_choice: "Qu’il ne fasse jamais jour", category: philosophique})
 
