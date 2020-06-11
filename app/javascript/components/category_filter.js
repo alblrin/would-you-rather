@@ -8,9 +8,6 @@ const categoryFilter = () => {
       categoryChoices.forEach(choice => choice.classList.remove('d-none'));
     });
   });
-  document.querySelector('.all-filter').addEventListener(("click", (event) => {
-    allChoices.forEach(choice => choice.classList.remove('d-none'));
-  }))
 }
 
 export { categoryFilter };
