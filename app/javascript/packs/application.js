@@ -27,6 +27,7 @@ import "bootstrap";
 import { answerChart } from '../components/answer_chart';
 import { showStats } from '../components/show_stats';
 import { categoryFilter } from '../components/category_filter';
+import { allFilter } from '../components/all_filter';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   answerChart();
   showStats();
   categoryFilter();
+  allFilter();
 });
