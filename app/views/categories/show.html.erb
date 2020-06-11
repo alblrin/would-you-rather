@@ -26,9 +26,12 @@
       <% end %>
     </div>
   </div>
-  <div class="bottom-container d-none mt-3" id="stats-zone">
-    <p>Moyenne des <%= @answers.count %> réponses :</p>
-    <canvas id="answerChart" data-answers="<%= @first_choice_proportion %>" width="800" height="300"></canvas>
-    <%= link_to "Suivant", "", class: "btn btn-secondary" %>
+  <div class="bottom-placeholder py-1">
+    <div class="bottom-container d-none" id="stats-zone">
+      <p>Moyenne des <%= @answers.count %> réponses :</p>
+      <canvas id="answerChart" data-answers="<%= @first_choice_proportion %>" width="800" height="300"></canvas>
+      <%= link_to "Suivant", "", class: "btn btn-secondary low-btn" %>
+      <%= link_to "Changer de catégorie", "/", class: "btn btn-secondary mt-3 low-btn" %>
+    </div>
   </div>
 </div>
