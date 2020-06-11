@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <%= simple_form_for(@choice) do |f| %>
+    <%= f.input :first_choice, label: "Premier choix", placeholder: "ex : Lécher la barre dans le métro" %>
+    <%= f.input :second_choice, label: "Second choix", placeholder: "ex : Mâcher un chewing-gum trouvé par terre" %>
+    <%= f.input :category, label: "Catégorie", collection: @categories %>
+    <%= f.submit %>
+  <% end %>
+</div>
