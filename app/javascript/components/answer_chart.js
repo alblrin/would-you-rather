@@ -5,7 +5,7 @@ const answerChart = () => {
   if (ctx) {
     const firstAnswers = 100 - parseInt(ctx.dataset.answers * 100, 10);
     const secondAnswers = firstAnswers - 100;
-    const myChart = new Chart(ctx, {
+    window.myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
         labels: ['Réponse 1', 'Réponse 2'],

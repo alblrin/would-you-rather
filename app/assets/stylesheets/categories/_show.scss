@@ -45,10 +45,12 @@
 
 .bottom-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
 #answerChart {
   width: 800px !important;
-  height: 400px !important;
+  height: 300px !important;
 }
