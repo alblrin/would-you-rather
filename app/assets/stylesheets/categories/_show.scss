@@ -50,6 +50,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  #first-choice {
+  color: $dark-gray !important;
+  }
+  #second-choice {
+    color: white !important;
+  }
 }
 
 .top-left-container {
