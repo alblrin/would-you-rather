@@ -3,12 +3,12 @@
     <div class="top-left-container">
       <% if current_user %>
         <% if @current_user_answer %>
-          <%= link_to @choice.first_choice, choice_answer_path(category_id: @category.id, answer_id: @current_user_answer.id, choice_id: @choice.id, choice_made: 0), method: :put, id: "first-choice", class: "valid-choice" %>
+          <%= link_to @choice.first_choice.capitalize, choice_answer_path(category_id: @category.id, answer_id: @current_user_answer.id, choice_id: @choice.id, choice_made: 0), method: :put, id: "first-choice", class: "valid-choice" %>
         <% else %>
-          <%= link_to @choice.first_choice, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 0), method: :post, id: "first-choice", class: "valid-choice" %>
+          <%= link_to @choice.first_choice.capitalize, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 0), method: :post, id: "first-choice", class: "valid-choice" %>
         <% end %>
       <% else %>
-        <%= link_to @choice.first_choice, new_user_session_path, id: "first-choice"%>
+        <%= link_to @choice.first_choice.capitalize, new_user_session_path, id: "first-choice"%>
       <% end %>
     </div>
     <div class="top-center-container">
@@ -17,12 +17,12 @@
     <div class="top-right-container">
       <% if current_user %>
         <% if @current_user_answer %>
-          <%= link_to @choice.second_choice, choice_answer_path(category_id: @category.id, answer_id: @current_user_answer.id, choice_id: @choice.id, choice_made: 1), method: :put, id: "second-choice", class: "valid-choice" %>
+          <%= link_to @choice.second_choice.capitalize, choice_answer_path(category_id: @category.id, answer_id: @current_user_answer.id, choice_id: @choice.id, choice_made: 1), method: :put, id: "second-choice", class: "valid-choice" %>
         <% else %>
-          <%= link_to @choice.second_choice, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 1), method: :post, id: "second-choice", class: "valid-choice" %>
+          <%= link_to @choice.second_choice.capitalize, choice_answers_path(category_id: @category.id, choice_id: @choice.id, choice_made: 1), method: :post, id: "second-choice", class: "valid-choice" %>
         <% end %>
       <% else %>
-        <%= link_to @choice.second_choice, new_user_session_path, id: "second-choice"%>
+        <%= link_to @choice.second_choice.capitalize, new_user_session_path, id: "second-choice"%>
       <% end %>
     </div>
   </div>
