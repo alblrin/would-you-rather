@@ -20,6 +20,7 @@
   text-align: center;
   h1 {
     color: $gray;
+    font-size: 24px;
   }
   li {
     list-style: none;
@@ -29,7 +30,7 @@
 
 .button-gray {
   width: 200px;
-  font-size: 26px;
+  font-size: 20px;
   background-color: $light-gray;
   border-radius: 20px;
 }
