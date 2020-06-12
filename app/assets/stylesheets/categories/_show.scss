@@ -11,7 +11,6 @@
   flex-direction: column;
   justify-content: center;
   a {
-    font-size: 30px;
     opacity: 0.75;
   }
   a:hover {
@@ -19,8 +18,31 @@
     opacity: 1;
     text-decoration: none;
   }
-  span {
-    font-size: 30px;
+}
+
+@media(max-width: 768px) {
+  .container-separated-show a {
+    font-size: 16px;
+  }
+  .container-separated-show span {
+    font-size: 16px;
+  }
+  #answerChart {
+    width: 400px !important;
+    height: 150px !important;
+  }
+}
+
+@media(min-width: 768px) {
+  .container-separated-show a {
+    font-size: 24px;
+  }
+  .container-separated-show span {
+    font-size: 24px;
+  }
+  #answerChart {
+    width: 800px !important;
+    height: 300px !important;
   }
 }
 
@@ -32,10 +54,12 @@
 
 .top-left-container {
   width: 45vh;
+  text-align: center;
 }
 
 .top-right-container {
   width: 45vh;
+  text-align: center;
 }
 
 .top-center-container {
@@ -50,7 +74,7 @@
   justify-content: center;
 }
 
-#answerChart {
-  width: 800px !important;
-  height: 300px !important;
+.low-btn {
+  font-size: 16px !important;
+  margin-top: 10px;
 }
