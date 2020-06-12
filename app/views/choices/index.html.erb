@@ -9,8 +9,8 @@
       <div class="card-product choice-card <%= choice.category.name %>-filter">
         <img src="https://picsum.photos/80?random=<%= choice.id %>" />
         <div class="card-product-infos">
-          <p><%= choice.first_choice %></p>
-          <p><%= choice.second_choice %></p>
+          <p><%= choice.first_choice.capitalize %></p>
+          <p><%= choice.second_choice.capitalize %></p>
         </div>
         <p class="mr-3">Inventé par <em><%= choice.created_by %></em></p>
         <% if current_user.username == choice.created_by %>
