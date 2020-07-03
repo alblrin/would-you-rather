@@ -28,11 +28,15 @@
   </div>
   <div class="bottom-placeholder py-1">
     <div class="bottom-container d-none" id="stats-zone">
+      <% if @answers.count > 0 %>
       <p>Moyenne des <%= @answers.count %> réponses :</p>
       <div class="stat-details">
         <p><%= (@first_choice_proportion * 100).to_i %>%</p>
         <p><%= (100 - (@first_choice_proportion * 100)).to_i %>%</p>
       </div>
+      <% else %>
+      <p>Vous êtes la première personne à répondre à cette question, quel honneur !</p>
+      <% end %>
       <canvas id="answerChart" data-answers="<%= @first_choice_proportion %>" width="800" height="300"></canvas>
       <%= link_to "Suivant", "", class: "btn btn-secondary low-btn" %>
       <%= link_to "Changer de catégorie", "/", class: "btn btn-secondary mt-3 low-btn" %>
